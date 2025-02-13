@@ -3,11 +3,15 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import DotPattern from "@/components/ui/dot-pattern";
+import LoginCard from "@/components/card/LoginCard";
+import { Layers } from "lucide-react";
 
 export default function Login() {
     const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
+    const Icon = Layers;
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -27,29 +31,31 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <form onSubmit={handleLogin} className="p-6 bg-white rounded shadow-md">
-                <input
-                    type="text"
-                    placeholder="Email or Username"
-                    value={identifier}
-                    onChange={(e) => setIdentifier(e.target.value)}
-                    className="border p-2 mb-4 w-full text-black"
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="border p-2 mb-4 w-full text-black"
-                />
-                <button
-                    type="submit"
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+        <div className="min-h-96 relative flex items-center justify-center px-6 py-32 mt-24">
+            <div className="z-10">
+                <LoginCard
+                    key={1}
+                    gradientColor="var(--jungle--green)"
+                    assetBackground="var(--bush)"
+                    titleBackground="var(--black--bean)"
+                    titleLabel="Login"
+                    identifier={identifier}
+                    password={password}
+                    setIdentifier={setIdentifier}
+                    setPassword={setPassword}
+                    onSubmit={handleLogin}
                 >
-                    Login
-                </button>
-            </form>
+                    <Icon className="size-4" />
+                </LoginCard>
+            </div>
+            <DotPattern
+                width={20}
+                height={20}
+                cx={1}
+                cy={1}
+                cr={1}
+                className="dot-pattern opacity-50"
+            />
         </div>
     );
 }

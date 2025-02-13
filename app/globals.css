@@ -2,20 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: hsl(0, 0%, 8%);
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* COLORS */
+    --background: 0 0 8%;
+    --foreground: 0 100% 100%;
+    --primary: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --border: 214.3 31.8% 91.4%;
+
+    --white--ice: rgba(225, 240, 255, 1);
+    --solitude: rgba(234, 246, 255, 1);
+    --tundora: rgba(66, 66, 66, 1);
+    --mine--shaft: rgba(35, 35, 35, 1);
+    --cod--gray: rgba(23, 23, 23, 1);
+    --dove--gray-30: rgba(115, 115, 115, 0.30000001192092896);
+    --ocean--green: rgba(60, 177, 121, 1);
+    --celtic: rgba(15, 41, 30, 1);
+    --bush: rgba(17, 49, 35, 1);
+    --black--bean: rgba(12, 31, 23, 1);
+    --jungle--green: rgba(48, 164, 108, 1);
+    --green--pea: rgba(24, 121, 78, 1);
+    --jewel: rgba(13, 126, 126, 1);
+    --dodger--blue: rgba(54, 158, 255, 1);
+    --azure--radiance: rgba(0, 145, 255, 1);
+    --science--blue: rgba(0, 106, 220, 1);
+    --endeavour: rgba(9, 84, 165, 1);
+    --downriver: rgba(15, 48, 88, 1);
+    --blue--zodiac: rgba(16, 42, 76, 1);
+    --amethyst: rgba(157, 91, 210, 1);
+    --fuchsia--pink: rgba(142, 78, 198, 1);
+    --cerise: rgba(214, 64, 159, 1);
+    --disco: rgba(122, 29, 90, 1);
+    --wine--berry: rgba(69, 26, 55, 1);
+    --loulou: rgba(59, 10, 42, 1);
+    --revolver: rgba(43, 14, 68, 1);
+    --antique--bronze: rgba(89, 74, 5, 1);
+    --bracken: rgba(68, 31, 4, 1);
+    --valencia: rgba(220, 61, 67, 1);
+    --brick--red: rgba(205, 43, 49, 1);
+    --crown-of--thorns: rgba(130, 32, 37, 1);
+    --rose-of--sharon: rgba(189, 75, 0, 1);
+    --rose-of--sharon-2: rgba(189, 75, 0, 0.2);
+    --brown: rgba(148, 62, 0, 1);
+    --supernova: rgba(247, 206, 0, 1);
+    --tan--hide: rgba(250, 147, 78, 1);
+    --silver--chalice: rgba(165, 165, 165, 1);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply text-foreground font-Inter text-xl;
+  }
+}
+
+@layer utilities {
+  .h1-bold {
+    @apply text-5xl md:text-6xl xl:text-8xl font-bold tracking-tighter;
+  }
+
+  .h2-bold {
+    @apply text-4xl md:text-5xl xl:text-7xl font-bold tracking-[-0.025em];
+  }
+
+  .text-code {
+    @apply font-Silkscreen;
+  }
+}
+
+.custom-width {
+  width: 130%;
+}
+
+@media (min-width: 768px) {
+  .custom-width {
+    width: 160%;
+  }
 }

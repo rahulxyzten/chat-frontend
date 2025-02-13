@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
+import DotPattern from "@/components/ui/dot-pattern";
 
 interface DecodedToken {
     id: string;
@@ -14,7 +15,7 @@ export default function Chat() {
     const [chat, setChat] = useState<string[]>([]);
     const ws = useRef<WebSocket | null>(null);
     const [userId, setUserId] = useState<string | null>(null);
-    const [isClient, setIsClient] = useState(false); // Prevent SSR hydration issues
+    const [isClient, setIsClient] = useState(false); // Prevent the SSR hydration issues
     const router = useRouter();
 
     useEffect(() => {
@@ -115,40 +116,45 @@ export default function Chat() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col items-center p-4">
-            <div className="w-full max-w-md bg-white shadow rounded p-4 mb-4">
+        <div className="min-h-screen flex flex-col justify-center items-center mt-24 text-whiteice relative">
+            <div className="w-full mb-16 md:mb-24 max-w-2xl bg-gray-800 shadow-lg rounded-lg p-4 relative">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-bold">Chat</h2>
-                    <button
-                        onClick={handleLogout}
-                        className="bg-red-500 text-white px-3 py-1 rounded"
-                    >
+                    <h3 className="text-xl font-semibold text-code">Chat Room</h3>
+                    <button onClick={handleLogout} className="bg-red-500 text-whiteice px-3 py-1 rounded">
                         Logout
                     </button>
                 </div>
-                <div className="h-64 overflow-y-auto mb-4 border p-2 rounded text-black">
+                <div className="h-96 overflow-y-auto mb-4 p-2 border border-gray-600 rounded  bg-gray-700">
                     {chat.map((msg, idx) => (
-                        <div key={idx} className="mb-2">
+                        <div key={idx} className="mb-2 text-sm text-whiteice">
                             {msg}
                         </div>
                     ))}
                 </div>
-                <div className="flex">
+                <div className="flex gap-2">
                     <input
                         type="text"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Type your message..."
-                        className="flex-1 border p-2 rounded-l text-black"
+                        className="flex-1 border p-2 rounded-l bg-gray-700 text-whiteice"
                     />
                     <button
                         onClick={sendMessage}
-                        className="bg-blue-500 text-white px-4 rounded-r"
+                        className="bg-blue-500 text-whiteice px-4 rounded-r"
                     >
-                        Send
+                        Send 🚀
                     </button>
                 </div>
             </div>
+            <DotPattern
+                width={20}
+                height={20}
+                cx={1}
+                cy={1}
+                cr={1}
+                className="absolute top-0 left-0 opacity-30"
+            />
         </div>
     );
 }

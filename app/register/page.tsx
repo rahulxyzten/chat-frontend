@@ -3,6 +3,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import DotPattern from "@/components/ui/dot-pattern";
+import RegisterCard from "@/components/card/RegisterCard";
+import { Package } from "lucide-react"; 
 
 export default function Signup() {
     const [username, setUsername] = useState<string>("");
@@ -10,6 +13,7 @@ export default function Signup() {
     const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
+    const Icon = Package; // Example icon
 
     const handleSignup = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -32,49 +36,33 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <form
-                onSubmit={handleSignup}
-                className="p-6 bg-white rounded shadow-md w-full max-w-sm"
-            >
-                <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-
-                {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
-
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="border p-2 mb-4 w-full rounded text-black"
-                    required
-                />
-
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="border p-2 mb-4 w-full rounded text-black"
-                    required
-                />
-
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="border p-2 mb-6 w-full rounded text-black"
-                    required
-                />
-
-                <button
-                    type="submit"
-                    className="bg-blue-500 hover:bg-blue-600 text-white w-full py-2 rounded"
+        <div className="min-h-96 relative flex items-center justify-center px-6 py-32 mt-24">
+            <div className="z-10">
+                <RegisterCard
+                    gradientColor="var(--rose-of--sharon)"
+                    assetBackground="var(--rose-of--sharon-2)"
+                    titleBackground="var(--rose-of--sharon-2)"
+                    titleLabel="Sign Up"
+                    username={username}
+                    email={email}
+                    password={password}
+                    setUsername={setUsername}
+                    setEmail={setEmail}
+                    setPassword={setPassword}
+                    onSubmit={handleSignup}
+                    error={error}
                 >
-                    Sign Up
-                </button>
-            </form>
+                    <Icon className="size-4" />
+                </RegisterCard>
+            </div>
+            <DotPattern
+                width={20}
+                height={20}
+                cx={1}
+                cy={1}
+                cr={1}
+                className="dot-pattern opacity-50"
+            />
         </div>
     );
 }
