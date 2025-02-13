@@ -31,7 +31,7 @@ export default function Signup() {
             router.push("/chat");
         } catch (err: any) {
             console.error("Error signing up:", err);
-            setError("Signup failed. Please check your details and try again.");
+            setError("Signup failed. Please check your details.");
         }
     };
 

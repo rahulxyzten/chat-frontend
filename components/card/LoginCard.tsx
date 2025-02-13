@@ -14,6 +14,7 @@ type SkillCardProps = {
     setIdentifier: (value: string) => void;
     setPassword: (value: string) => void;
     onSubmit: (e: React.FormEvent) => void;
+    error?: string | null;
     children: React.ReactNode;
 };
 
@@ -27,6 +28,7 @@ const LoginCard = ({
     setIdentifier,
     setPassword,
     onSubmit,
+    error,
     children,
 }: SkillCardProps) => {
     const [hoveredId, setHoveredId] = useState("");
@@ -59,6 +61,7 @@ const LoginCard = ({
                 onSubmit={onSubmit}
                 className="flex relative w-full flex-col gap-4 justify-center content-center"
             >
+                {error && <div className="text-red-500 text-sm max-w-72">{error}</div>}
                 <input
                     type="text"
                     placeholder="Email or Username"

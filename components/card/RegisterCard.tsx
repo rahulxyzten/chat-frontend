@@ -66,7 +66,7 @@ export default function RegisterCard({
         className="flex relative w-full flex-col gap-4 justify-center content-center"
       >
         
-        {error && <div className="text-red-500 text-center">{error}</div>}
+        {error && <div className="text-red-500 text-sm max-w-72">{error}</div>}
 
         <input
           type="text"

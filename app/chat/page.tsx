@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
+import { BsFillAirplaneFill } from "react-icons/bs";
 import DotPattern from "@/components/ui/dot-pattern";
 
 interface DecodedToken {
@@ -120,7 +121,10 @@ export default function Chat() {
             <div className="w-full mb-16 md:mb-24 max-w-2xl bg-gray-800 shadow-lg rounded-lg p-4 relative">
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-semibold text-code">Chat Room</h3>
-                    <button onClick={handleLogout} className="bg-red-500 text-whiteice px-3 py-1 rounded">
+                    <button
+                        onClick={handleLogout}
+                        className="bg-red-500 text-whiteice px-3 py-1 rounded text-code"
+                    >
                         Logout
                     </button>
                 </div>
@@ -143,7 +147,8 @@ export default function Chat() {
                         onClick={sendMessage}
                         className="bg-blue-500 text-whiteice px-4 rounded-r"
                     >
-                        Send 🚀
+                        <span className="hidden md:inline text-code">Send {" "} </span>
+                        <BsFillAirplaneFill className="inline" />
                     </button>
                 </div>
             </div>

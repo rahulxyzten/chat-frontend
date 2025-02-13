@@ -97,7 +97,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     <br/>
     <br/>
     <img width="45%" src="https://github.com/user-attachments/assets/dcf417ac-f8b3-4832-99aa-17edd240c5e4">
-    <img width="45%" src="https://github.com/user-attachments/assets/b63ae089-6e94-439a-bdba-89a6fccbdefd">
+    <img width="45%" src="https://github.com/user-attachments/assets/feb7ad5b-7a1d-45cb-9882-4c7e72253378">
   </p>
 </div>
  <br/>
@@ -113,7 +113,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     <br/>
     <br/>
     <img width="45%"src="https://github.com/user-attachments/assets/1aa9d1b1-08f8-4473-8d5c-905e23852ac0">
-    <img width="45%"src="https://github.com/user-attachments/assets/33c90e43-8921-4934-8f7e-ba3732973c5a">
+    <img width="45%"src="https://github.com/user-attachments/assets/7c027788-e6fc-460b-93e7-84063bfc98b7">
   </p>
 </div>
  <br/>
@@ -129,7 +129,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     <br/>
     <br/>
     <img width="45% "height="70%" src="https://github.com/user-attachments/assets/82c07737-8246-45e7-94ed-8c0e6069bf20">
-    <img width="45%" height="70%" src="https://github.com/user-attachments/assets/3685662c-c5d9-4eb0-a488-f48c6c39fd97">
+    <img width="45%" height="70%" src="https://github.com/user-attachments/assets/777aebdb-f7e2-4963-9a80-ff924aa27449">
   </p>
 </div>
  <br/>

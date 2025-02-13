@@ -11,6 +11,7 @@ export default function Login() {
     const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
+    const [error, setError] = useState<string | null>(null);
     const Icon = Layers;
 
     const handleLogin = async (e: React.FormEvent) => {
@@ -27,6 +28,7 @@ export default function Login() {
             router.push("/chat");
         } catch (error) {
             console.error("Login error:", error);
+            setError("Signin failed. Please check your details.");
         }
     };
 
@@ -44,6 +46,7 @@ export default function Login() {
                     setIdentifier={setIdentifier}
                     setPassword={setPassword}
                     onSubmit={handleLogin}
+                    error={error}
                 >
                     <Icon className="size-4" />
                 </LoginCard>
