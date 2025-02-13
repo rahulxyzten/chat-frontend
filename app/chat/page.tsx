@@ -68,7 +68,7 @@ export default function Chat() {
     }
 
     const connectWebSocket = () => {
-        ws.current = new WebSocket("ws://localhost:8080");
+        ws.current = new WebSocket(`${process.env.NEXT_PUBLIC_WS_URL}`);
 
         ws.current.onopen = () => {
             console.log("WebSocket connected");

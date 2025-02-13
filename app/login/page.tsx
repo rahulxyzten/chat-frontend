@@ -17,7 +17,7 @@ export default function Login() {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:1337/api/auth/local",
+                `${process.env.NEXT_PUBLIC_API_URL}/auth/local`,
                 {
                     identifier,
                     password,

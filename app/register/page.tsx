@@ -19,7 +19,7 @@ export default function Signup() {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:1337/api/auth/local/register",
+                `${process.env.NEXT_PUBLIC_API_URL}/auth/local/register`,
                 {
                     username,
                     email,
