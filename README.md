@@ -13,6 +13,14 @@
 <br />
 
 A real-time chat application built with Next.js, Strapi, and WebSockets. This scalable application ensures seamless communication and offers a developer-friendly experience.
+<br/>
+This repository contains only the frontend part of the chat application. Find the backend code of the application here. [(backend repo)](https://github.com/rahulxyzten/chat-backend)
+
+**✨ Key Features:**
+
+- **Real-Time Messaging:** Achieves instantaneous message exchanges through WebSockets.
+- **User Management:** Manages user authentication and profiles via Strapi.
+- **Responsive Design:** Ensures the chat application is accessible and visually appealing on various devices.
 
 <br>
 <h3 align="center">🛠️ Built With</h3>
